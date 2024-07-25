@@ -1,17 +1,61 @@
-# solar-tracker
-Solar Tracking for Optimization of Photovoltaic Power Generation
+# Solar Tracking for Optimization of Photovoltaic Power Generation in Solar Panel
 
-## Motivation
-I am thrilled to share that Smart Cities are no longer just a theoretical concept, but a tangible reality in today's world. With the rapid pace of urbanization and industrialization, the demand for energy has never been higher. However, there is a silver lining - renewable energy is gaining immense popularity and can help us achieve sustainability. By leveraging IoT and data analytics, we can collect real-time data and build a robust system to optimize energy harvest from solar sources. This is an exciting time for us to come together and make a positive impact on our environment.
+This project aims to optimize photovoltaic power generation using solar tracking technology. By leveraging IoT and data analytics, the system ensures that solar panels track the sun's position and adjust accordingly to maximize power output.
 
 ## Scope of Project
-To achieve the maximum possible power output from a solar panel, it is necessary to enable it to track the sun and rotate and position itself accordingly. This will ensure that no part of the solar array is covered by shade due to any obstructing factors. To further optimize the power output, a smart mechanical system can be implemented to adjust the panel to a better angle and position, thereby re-obtaining maximum current and voltage.
+
+- **Need**: With the rapid pace of urbanization and industrialization, energy demand has surged. Renewable energy, particularly solar energy, offers a sustainable solution. By utilizing IoT and data analytics, we can build a system that optimizes solar energy harvest, contributing to smart city development and environmental sustainability.
+- **Objective**: To achieve maximum possible power output from solar panels by tracking the sun and adjusting the panel's position to avoid shading and optimize the angle.
+- **Implementation**: A smart mechanical system adjusts the panel to maintain optimal current and voltage, thereby maximizing power output.
+
+## Outcome
+![image](https://github.com/user-attachments/assets/a394d831-fecd-4413-b0ca-20c6ff2db1a4)
+
 
 ## Methodology
-An integrated system consisting of an Arduino Uno and a Raspberry Pi is used to collect and process data. Light Dependent Resistor (LDR) readings are taken from each corner of the solar panel, and the average values of all four sides are calculated. The panel is then adjusted to equalize the averages. Once a stable position is reached and a certain number of values are obtained, a simple linear regression model is trained. This model allows the panel to continue optimizing its positioning to obtain maximum sunlight. If the power being generated drops below regular levels, the sensors start sensing again, and the data collected is used to retrain the model for reconfiguration purposes.
 
-## Results
-A linear regressor model has been developed to adjust the positioning of a panel in order to obtain the maximum possible power over a period of time. The reconfiguring functionality has been successfully implemented, allowing the panel to adapt to changing trends and optimize the interfaced photovoltaic power generation. The system has been built successfully.
+1. **System Integration**: 
+    - An Arduino Uno and a Raspberry Pi are used to collect and process data.
+    - Light Dependent Resistor (LDR) readings are taken from each corner of the solar panel.
+    - Average values from the LDRs are calculated, and the panel adjusts to equalize these averages.
 
-## Diagram
 ![image](https://github.com/manavukani/solar-tracker/assets/84531789/270702fc-9215-4257-8a78-7f8b9670e73f)
+  
+2. **Data Processing**:
+    - A linear regression model is trained using the collected data to optimize the panel's positioning.
+    - The model adjusts the panel for maximum sunlight based on real-time data.
+    - If power generation drops below expected levels, sensors recalibrate and retrain the model.
+
+3. **Results**:
+    - A linear regressor model successfully adjusts the panel positioning for optimal power output.
+    - The reconfiguration functionality adapts to changing conditions, optimizing photovoltaic power generation.
+
+## Implementation Details
+
+- **Hardware**:
+  - Solar Panels
+  - Light Dependent Resistors (LDRs)
+  - Arduino Uno
+  - Raspberry Pi
+  - Servo Motors
+
+- **Software**:
+  - Python (for data processing and model training)
+  - Arduino IDE (for interfacing with hardware)
+  - Sklearn (for linear regression)
+
+## Usage
+
+1. **Setup**:
+   - Connect the solar panel to the Arduino and Raspberry Pi.
+   - Place LDRs at the corners of the solar panel.
+
+2. **Running the System**:
+   - Use the `sending.py` script to collect and process sensor data.
+   - The `work.py` script trains the regression model and adjusts the panel positioning.
+
+## Files
+
+- `sending.py`: Collects data from the Arduino and stores it for model training.
+- `work.py`: Trains the regression model and adjusts the panel positioning.
+
